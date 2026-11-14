@@ -1,0 +1,24 @@
+using System;
+using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+using System.Text;
+
+namespace Colherada.Models.Entidades
+{
+    public class Classificacao
+    {
+        public int Id { get; set; }
+
+        [Range(1, 5)]
+        public int Valor { get; set; }
+
+        public DateTimeOffset DataClassificacao { get; set; }
+
+        public string UtilizadorId { get; set; } = string.Empty;
+
+        [Range(1, int.MaxValue)]
+        public int ReceitaId { get; set; }
+
+        public Receita Receita { get; set; } = null!;
+    }
+}

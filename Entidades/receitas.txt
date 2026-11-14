@@ -1,0 +1,61 @@
+using Colherada.Models.Enums;
+using System;
+using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+using System.Text;
+
+namespace Colherada.Models.Entidades
+{
+    public class Receita
+    {
+        public int Id { get; set; }
+
+        [Required]
+        [StringLength(100)]
+        public string Nome { get; set; } = string.Empty;
+
+        [Required]
+        [StringLength(500)]
+        public string Descricao { get; set; } = string.Empty;
+
+        [Url]
+        public string? ImagemUrl { get; set; }
+
+        [Range(1, int.MaxValue)]
+        public int Duracao { get; set; }
+
+        public Dificuldade Dificuldade { get; set; }
+
+        [Required]
+        [StringLength(3000)]
+        public string ModoPreparacao { get; set; } = string.Empty;
+
+        public EstadoReceita Estado { get; set; } = EstadoReceita.Pendente;
+
+        public DateTimeOffset DataSubmissao { get; set; }
+
+        public DateTimeOffset? DataUltimaValidacao { get; set; }
+
+        public string? AdministradorResponsavelId { get; set; }
+
+        [StringLength(500)]
+        public string? MotivoRejeicao { get; set; }
+
+        public string AutorId { get; set; } = string.Empty;
+
+        [Range(1, int.MaxValue)]
+        public int CategoriaId { get; set; }
+
+        public Categoria Categoria { get; set; } = null!;
+
+        public bool IsDeleted { get; set; } = false;
+
+        public ICollection<ReceitaIngrediente> Ingredientes { get; set; } = new List<ReceitaIngrediente>();
+
+        public ICollection<Comentario> Comentarios { get; set; } = new List<Comentario>();
+
+        public ICollection<Classificacao> Classificacoes { get; set; } = new List<Classificacao>();
+
+        public ICollection<Favorito> Favoritos { get; set; } = new List<Favorito>();
+    }
+}

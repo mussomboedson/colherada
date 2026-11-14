@@ -1,0 +1,21 @@
+using System;
+using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+using System.Text;
+
+namespace Colherada.Models.Entidades
+{
+    public class Favorito
+    {
+        public int Id { get; set; }
+
+        public string UtilizadorId { get; set; } = string.Empty;
+
+        [Range(1, int.MaxValue)]
+        public int ReceitaId { get; set; }
+
+        public Receita Receita { get; set; } = null!;
+
+        public DateTimeOffset DataAdicionado { get; set; }
+    }
+}
