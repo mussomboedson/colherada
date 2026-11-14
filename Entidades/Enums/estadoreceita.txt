@@ -1,0 +1,13 @@
+using System;
+using System.Collections.Generic;
+using System.Text;
+
+namespace Colherada.Models.Enums
+{
+    public enum EstadoReceita
+    {
+        Pendente = 1,
+        Aprovada = 2,
+        Rejeitada = 3
+    }
+}

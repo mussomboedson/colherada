@@ -1,0 +1,18 @@
+using System;
+using System.Collections.Generic;
+using System.Text;
+
+namespace Colherada.Models.Enums
+{
+    public enum UnidadeMedida
+    {
+        Grama = 1,
+        Quilograma = 2,
+        Mililitro = 3,
+        Litro = 4,
+        Unidade = 5,
+        ColherSopa = 6,
+        ColherCha = 7,
+        Chavena = 8
+    }
+}
